@@ -1,0 +1,42 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/work/secure-api
+plugins: platformdirs-4.13.3, anyio-4.15.1
+collecting ... collected 33 items
+
+tests/test_api.py::test_login_success_returns_jwt PASSED                 [  3%]
+tests/test_api.py::test_login_wrong_password PASSED                      [  6%]
+tests/test_api.py::test_login_unknown_user_same_error PASSED             [  9%]
+tests/test_api.py::test_login_bad_input[None] PASSED                     [ 12%]
+tests/test_api.py::test_login_bad_input[payload1] PASSED                 [ 15%]
+tests/test_api.py::test_login_bad_input[payload2] PASSED                 [ 18%]
+tests/test_api.py::test_login_bad_input[payload3] PASSED                 [ 21%]
+tests/test_api.py::test_login_bad_input[payload4] PASSED                 [ 24%]
+tests/test_api.py::test_data_requires_token PASSED                       [ 27%]
+tests/test_api.py::test_data_with_token PASSED                           [ 30%]
+tests/test_api.py::test_create_post_requires_token PASSED                [ 33%]
+tests/test_api.py::test_create_post_validation[payload0] PASSED          [ 36%]
+tests/test_api.py::test_create_post_validation[payload1] PASSED          [ 39%]
+tests/test_api.py::test_create_post_validation[payload2] PASSED          [ 42%]
+tests/test_api.py::test_create_post_validation[payload3] PASSED          [ 45%]
+tests/test_api.py::test_create_post_validation[payload4] PASSED          [ 48%]
+tests/test_api.py::test_health_is_public PASSED                          [ 51%]
+tests/test_api.py::test_garbage_token_rejected PASSED                    [ 54%]
+tests/test_api.py::test_wrong_scheme_rejected PASSED                     [ 57%]
+tests/test_api.py::test_token_signed_with_other_secret_rejected PASSED   [ 60%]
+tests/test_api.py::test_expired_token_rejected PASSED                    [ 63%]
+tests/test_api.py::test_alg_none_token_rejected PASSED                   [ 66%]
+tests/test_api.py::test_password_not_stored_in_plaintext PASSED          [ 69%]
+tests/test_api.py::test_same_password_gives_different_hashes PASSED      [ 72%]
+tests/test_api.py::test_verify_password_rejects_malformed_hash PASSED    [ 75%]
+tests/test_api.py::test_sqli_in_login_username[' OR '1'='1] PASSED       [ 78%]
+tests/test_api.py::test_sqli_in_login_username[alice'--] PASSED          [ 81%]
+tests/test_api.py::test_sqli_in_login_username[' OR 1=1 --] PASSED       [ 84%]
+tests/test_api.py::test_sqli_in_login_username[" OR ""="] PASSED         [ 87%]
+tests/test_api.py::test_sqli_in_login_password PASSED                    [ 90%]
+tests/test_api.py::test_sqli_in_search_does_not_leak_or_break PASSED     [ 93%]
+tests/test_api.py::test_xss_payload_is_escaped_in_response PASSED        [ 96%]
+tests/test_api.py::test_security_headers_present PASSED                  [100%]
+
+============================== 33 passed in 5.82s ==============================
